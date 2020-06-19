@@ -1,0 +1,22 @@
+.questions-container {
+}
+.options-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 10px;
+}
+.untouched{
+    padding: 0.5rem 1rem;  
+}
+
+.touched:disabled{
+   background-color: tomato;
+}
+.next-button-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}

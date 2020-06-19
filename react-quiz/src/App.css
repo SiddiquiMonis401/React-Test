@@ -1,0 +1,14 @@
+.app {
+  height: 100vh;
+  width: 100vw;
+  border: 5px solid grey;
+  display: flex;
+  justify-content: center;
+}
+.sub-container{
+  display: grid;
+  align-items: center;
+  grid-template-rows: 50px 500px 100px;
+  width: 90vw;
+}
+
