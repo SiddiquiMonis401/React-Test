@@ -12,7 +12,7 @@ export const AppReducer = (state, action) => {
     case CorrectAnswer:
       const correctAnswer = (state.correctAnswer += 1)
       const currentProgress = state.correctAnswer / (state.questions.length)
-      const minIfC = state.correctAnswer / state.questions.length
+      const minIfC = state.correctAnswer / state.questionsAsked;
       return {
         ...state,
         correctAnswer: correctAnswer,
