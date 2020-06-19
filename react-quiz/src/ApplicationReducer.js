@@ -26,7 +26,7 @@ export const AppReducer = (state, action) => {
       return {
         ...state,
         currentProgress: currentProgressW,
-        maxScore: maxScoreIfW
+        maxScore: maxScoreIfW,
       }
     case ChangeEnd:
       return { ...state, ended: true }
