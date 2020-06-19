@@ -22,8 +22,7 @@ export const AppReducer = (state, action) => {
     case WrongAnswer:
       const currentProgressW = state.correctAnswer / (state.questionsAsked + 1)
       const remainingIfW = state.questions.length - (state.questionsAsked + 1)
-      const maxScoreIfW =
-        (state.correctAnswer + remainingIfW) / state.questions.length
+      const maxScoreIfW =((state.correctAnswer + remainingIfW) / state.questions.length)
       return {
         ...state,
         currentProgress: currentProgressW,
