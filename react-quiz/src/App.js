@@ -1,10 +1,7 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import ContextProvider from './Context';
-import {globalContext} from './Context';
 import QuestionComponets from './Components/QuestionComponets';
 import QuizProgress from './Components/QuizProgress';
-import MaximumScore from './Components/MaximumScore';
-import CurrentScore from './Components/CurrentScore';
 
 // Styles css
 import './App.css'

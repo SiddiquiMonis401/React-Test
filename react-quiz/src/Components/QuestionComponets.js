@@ -33,6 +33,7 @@ function QuestionComponets (props) {
         return 'untouched'
       })
     )
+    // eslint-disable-next-line 
   }, [])
 
   // handlers
@@ -50,7 +51,7 @@ function QuestionComponets (props) {
 
 
     setShowNextButton(true)
-    if (!questions[questionsAsked].incorrect_answers.includes(e.target.value)) {
+    if (!questions[questionsAsked].incorrect_answers.includes(escape(e.target.value))) {
       console.log('correct reached')
       handleCorrectAnswer()
       setSuccess(true);
@@ -82,10 +83,10 @@ function QuestionComponets (props) {
       {!ended ?
       (
       <>  
-      <h3>{questions[questionsAsked].category}</h3>
+      <h3>{unescape(questions[questionsAsked].category)}</h3>
       <DifficultyDisplayer difficulty={questions[questionsAsked].difficulty} />
       <h1>Question {questionsAsked + 1} of 20</h1>
-      <h3>{questions[questionsAsked].question}</h3>
+      <h3>{unescape(questions[questionsAsked].question)}</h3>
       <div className="options-container">
         {options.map((item, index) => {
           return (
@@ -98,7 +99,7 @@ function QuestionComponets (props) {
               value={item}
               key={index}
             >
-              {item}
+              {unescape(item)}
             </button>
           )
         })}

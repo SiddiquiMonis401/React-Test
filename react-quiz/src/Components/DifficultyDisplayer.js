@@ -1,11 +1,12 @@
 import React from 'react';
 import {AiFillStar,AiOutlineStar} from 'react-icons/ai';
+import propTypes from 'prop-types'
 
 function DifficultyDisplayer({difficulty}) {
     return (
         <div>
             {
-             difficulty === 'hard' && ['fill','fill','fill'].map((items) => {
+             difficulty.toLowerCase() === 'hard' && ['fill','fill','fill'].map((items) => {
                if(items=== 'fill'){
                    return(
                    <AiFillStar />
@@ -17,7 +18,7 @@ function DifficultyDisplayer({difficulty}) {
              })   
             }
             {
-             difficulty === 'medium' && ['fill','fill','outline'].map((items) => {
+             difficulty.toLowerCase() === 'medium' && ['fill','fill','outline'].map((items) => {
                if(items=== 'fill'){
                    return(
                    <AiFillStar />
@@ -29,7 +30,7 @@ function DifficultyDisplayer({difficulty}) {
              })   
             }
             {
-             difficulty === 'easy' && ['fill','outline','outline'].map((items) => {
+             difficulty.toLowerCase() && ['fill','outline','outline'].map((items) => {
                if(items=== 'fill'){
                    return(
                    <AiFillStar />
@@ -42,6 +43,14 @@ function DifficultyDisplayer({difficulty}) {
             }
         </div>
     );
+}
+
+DifficultyDisplayer.propTypes = {
+    difficulty:propTypes.string.isRequired,
+}
+
+DifficultyDisplayer.default = {
+    difficulty: 'easy'
 }
 
 export default DifficultyDisplayer;
